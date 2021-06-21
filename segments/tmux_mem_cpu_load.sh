@@ -6,7 +6,7 @@ run_segment() {
 		return
 	fi
 
-	stats=$(tmux-mem-cpu-load -g 5)
+	stats=$(tmux-mem-cpu-load -g 5 -a 0)
 	if [ -n "$stats" ]; then
 		echo "$stats";
 	fi
