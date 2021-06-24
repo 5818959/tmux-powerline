@@ -18,5 +18,6 @@ run_segment() {
 
 	cur_layout=`defaults read ~/Library/Preferences/com.apple.HIToolbox.plist AppleSelectedInputSources | egrep -w 'KeyboardLayout\ Name' | sed -E 's/^.+ = \"?([^\"]+)\"?;$/\1/'`
 	[ "$cur_layout" == "ABC" ] && cur_layout="English"
+	[ "$cur_layout" == "U.S." ] && cur_layout="English"
 	echo ${cur_layout:0:2} | awk '{print tolower($0)}'
 }
